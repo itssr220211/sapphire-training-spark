@@ -1,19 +1,32 @@
-
 import React from 'react';
 import { Building, Zap, Heart, GraduationCap, Banknote, ShoppingCart } from 'lucide-react';
-
 const IndustriesSection = () => {
-  const industries = [
-    { icon: Building, name: 'Technology', description: 'Software companies, startups, and tech enterprises' },
-    { icon: Banknote, name: 'Financial Services', description: 'Banks, investment firms, and fintech companies' },
-    { icon: Heart, name: 'Healthcare', description: 'Hospitals, pharmaceutical, and medical device companies' },
-    { icon: GraduationCap, name: 'Education', description: 'Universities, schools, and educational institutions' },
-    { icon: Zap, name: 'Energy & Utilities', description: 'Power companies and renewable energy firms' },
-    { icon: ShoppingCart, name: 'Retail & E-commerce', description: 'Online and traditional retail organizations' },
-  ];
-
-  return (
-    <section id="industries" className="py-20 bg-white">
+  const industries = [{
+    icon: Building,
+    name: 'Technology',
+    description: 'Software companies, startups, and tech enterprises'
+  }, {
+    icon: Banknote,
+    name: 'Financial Services',
+    description: 'Banks, investment firms, and fintech companies'
+  }, {
+    icon: Heart,
+    name: 'Healthcare',
+    description: 'Hospitals, pharmaceutical, and medical device companies'
+  }, {
+    icon: GraduationCap,
+    name: 'Education',
+    description: 'Universities, schools, and educational institutions'
+  }, {
+    icon: Zap,
+    name: 'Energy & Utilities',
+    description: 'Power companies and renewable energy firms'
+  }, {
+    icon: ShoppingCart,
+    name: 'Retail & E-commerce',
+    description: 'Online and traditional retail organizations'
+  }];
+  return <section id="industries" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -25,8 +38,7 @@ const IndustriesSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {industries.map((industry, index) => (
-            <div key={index} className="group text-center p-8 rounded-2xl hover:bg-gray-50 transition-all hover-lift">
+          {industries.map((industry, index) => <div key={index} className="group text-center p-8 rounded-2xl hover:bg-gray-50 transition-all hover-lift">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-sapphire/10 rounded-full mb-6 group-hover:bg-sapphire group-hover:text-white transition-all">
                 <industry.icon className="w-8 h-8 text-sapphire group-hover:text-white" />
               </div>
@@ -36,12 +48,11 @@ const IndustriesSection = () => {
               <p className="text-gray-600 leading-relaxed">
                 {industry.description}
               </p>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-sapphire to-blue-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-sapphire to-blue-600 rounded-2xl p-8 text-white bg-slate-950">
             <h3 className="text-2xl lg:text-3xl font-bold mb-4">
               Don't See Your Industry?
             </h3>
@@ -55,8 +66,6 @@ const IndustriesSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default IndustriesSection;
