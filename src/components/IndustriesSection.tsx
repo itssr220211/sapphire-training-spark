@@ -45,7 +45,7 @@ const IndustriesSection = () => {
               <h3 className="text-xl mb-3 group-hover:text-sapphire transition-colors text-slate-300 font-semibold">
                 {industry.name}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="leading-relaxed text-slate-300">
                 {industry.description}
               </p>
             </div>)}
