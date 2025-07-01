@@ -1,55 +1,37 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from '@/components/ui/carousel';
-
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 const AnimatedHero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentText, setCurrentText] = useState(0);
-  
-  const animatedTexts = [
-    "Empowering Intelligence",
-    "Transforming Teams", 
-    "Driving Excellence"
-  ];
-
-  const carouselImages = [
-    {
-      src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop",
-      alt: "Professionals collaborating in modern office"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop", 
-      alt: "Person using laptop for professional development"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
-      alt: "Professional woman in training session"
-    }
-  ];
-
+  const animatedTexts = ["Empowering Intelligence", "Transforming Teams", "Driving Excellence"];
+  const carouselImages = [{
+    src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop",
+    alt: "Professionals collaborating in modern office"
+  }, {
+    src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
+    alt: "Person using laptop for professional development"
+  }, {
+    src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
+    alt: "Professional woman in training session"
+  }];
   useEffect(() => {
     setIsVisible(true);
     const interval = setInterval(() => {
-      setCurrentText((prev) => (prev + 1) % animatedTexts.length);
+      setCurrentText(prev => (prev + 1) % animatedTexts.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-sapphire to-blue-900">
+  return <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-sapphire to-blue-900">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -60,9 +42,9 @@ const AnimatedHero = () => {
       {/* Geometric Grid */}
       <div className="absolute inset-0 opacity-10">
         <div className="grid grid-cols-12 gap-4 h-full">
-          {Array.from({ length: 144 }).map((_, i) => (
-            <div key={i} className="border border-white/20 rounded-sm"></div>
-          ))}
+          {Array.from({
+          length: 144
+        }).map((_, i) => <div key={i} className="border border-white/20 rounded-sm"></div>)}
         </div>
       </div>
 
@@ -80,7 +62,7 @@ const AnimatedHero = () => {
                 <span className="block">
                   {animatedTexts[currentText].split(' ')[0]}
                 </span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-white">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-white px-0 py-[14px]">
                   {animatedTexts[currentText].split(' ')[1]}
                 </span>
                 <span className="block text-white">at Work</span>
@@ -93,21 +75,12 @@ const AnimatedHero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
-              <Button 
-                onClick={() => scrollToSection('solutions')}
-                size="lg"
-                className="bg-white text-sapphire hover:bg-blue-50 px-8 py-4 text-lg font-semibold rounded-full transition-all hover:shadow-2xl hover:scale-105 group"
-              >
+              <Button onClick={() => scrollToSection('solutions')} size="lg" className="bg-white text-sapphire hover:bg-blue-50 px-8 py-4 text-lg font-semibold rounded-full transition-all hover:shadow-2xl hover:scale-105 group">
                 Explore Solutions
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               
-              <Button 
-                onClick={() => scrollToSection('testimonials')}
-                variant="outline"
-                size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-sapphire px-8 py-4 text-lg font-semibold rounded-full transition-all group"
-              >
+              <Button onClick={() => scrollToSection('testimonials')} variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-sapphire px-8 py-4 text-lg font-semibold rounded-full transition-all group">
                 <Play className="mr-2 w-5 h-5" />
                 Watch Demo
               </Button>
@@ -135,17 +108,11 @@ const AnimatedHero = () => {
             <div className="relative p-8 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl">
               <Carousel className="w-full max-w-md mx-auto">
                 <CarouselContent>
-                  {carouselImages.map((image, index) => (
-                    <CarouselItem key={index}>
+                  {carouselImages.map((image, index) => <CarouselItem key={index}>
                       <div className="p-1">
-                        <img
-                          src={image.src}
-                          alt={image.alt}
-                          className="w-full h-64 object-cover rounded-2xl shadow-lg"
-                        />
+                        <img src={image.src} alt={image.alt} className="w-full h-64 object-cover rounded-2xl shadow-lg" />
                       </div>
-                    </CarouselItem>
-                  ))}
+                    </CarouselItem>)}
                 </CarouselContent>
               </Carousel>
               
@@ -164,8 +131,6 @@ const AnimatedHero = () => {
           <div className="w-1 h-3 bg-white/60 rounded-full animate-pulse"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AnimatedHero;
