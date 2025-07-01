@@ -80,7 +80,7 @@ const AnimatedHero = () => {
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               
-              <Button onClick={() => scrollToSection('testimonials')} variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-sapphire px-8 py-4 text-lg font-semibold rounded-full transition-all group">
+              <Button onClick={() => scrollToSection('testimonials')} variant="outline" size="lg" className="border-2 border-white hover:bg-white hover:text-sapphire px-8 py-4 text-lg font-semibold rounded-full transition-all group text-blue-800">
                 <Play className="mr-2 w-5 h-5" />
                 Watch Demo
               </Button>
