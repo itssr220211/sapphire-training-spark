@@ -1,27 +1,21 @@
-
 import React from 'react';
 import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
-
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <footer className="bg-black text-white">
+  return <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <img 
-                src="/lovable-uploads/045d2aa9-9dad-495c-8845-65600722be95.png" 
-                alt="Sapphire Training Solutions" 
-                className="h-8 w-8 filter brightness-0 invert"
-              />
+              <img alt="Sapphire Training Solutions" src="/lovable-uploads/245fc19e-d8e5-4cf8-a193-5dad745d1a4a.png" className="h-20 w-20 filter brightness-0 invert" />
               <div>
                 <div className="text-xl font-bold">SAPPHIRE</div>
                 <div className="text-xs text-gray-400 tracking-wider">TRAINING SOLUTIONS</div>
@@ -49,50 +43,32 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <button 
-                  onClick={() => scrollToSection('home')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
+                <button onClick={() => scrollToSection('home')} className="text-gray-300 hover:text-white transition-colors">
                   Home
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('about')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
+                <button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-white transition-colors">
                   About Us
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('solutions')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
+                <button onClick={() => scrollToSection('solutions')} className="text-gray-300 hover:text-white transition-colors">
                   Solutions
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('industries')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
+                <button onClick={() => scrollToSection('industries')} className="text-gray-300 hover:text-white transition-colors">
                   Industries
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('testimonials')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
+                <button onClick={() => scrollToSection('testimonials')} className="text-gray-300 hover:text-white transition-colors">
                   Testimonials
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('contact')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
+                <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-white transition-colors">
                   Contact
                 </button>
               </li>
@@ -138,8 +114,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
