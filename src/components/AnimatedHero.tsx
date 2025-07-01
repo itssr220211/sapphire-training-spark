@@ -2,6 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel';
 
 const AnimatedHero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,6 +16,21 @@ const AnimatedHero = () => {
     "Empowering Intelligence",
     "Transforming Teams", 
     "Driving Excellence"
+  ];
+
+  const carouselImages = [
+    {
+      src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop",
+      alt: "Professionals collaborating in modern office"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop", 
+      alt: "Person using laptop for professional development"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
+      alt: "Professional woman in training session"
+    }
   ];
 
   useEffect(() => {
@@ -110,14 +130,24 @@ const AnimatedHero = () => {
             </div>
           </div>
 
-          {/* Visual Element */}
+          {/* Glassmorphic Carousel */}
           <div className={`relative transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/cb6c7757-2ba6-4d75-9379-00ed412e6065.png" 
-                alt="Sapphire Training Solutions" 
-                className="h-64 w-auto mx-auto drop-shadow-2xl animate-float"
-              />
+            <div className="relative p-8 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl">
+              <Carousel className="w-full max-w-md mx-auto">
+                <CarouselContent>
+                  {carouselImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="p-1">
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
               
               {/* Floating Elements */}
               <div className="absolute -top-8 -left-8 w-16 h-16 bg-white/10 rounded-full blur-sm animate-pulse"></div>
