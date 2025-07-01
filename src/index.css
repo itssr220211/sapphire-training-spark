@@ -201,26 +201,6 @@
   animation: scaleIn 0.5s ease-out;
 }
 
-/* Enhanced Gradient Animation */
-@keyframes gradient-x {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 100% 50%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  75% {
-    background-position: 0% 100%;
-  }
-}
-
-.animate-gradient-x {
-  animation: gradient-x 4s ease-in-out infinite;
-}
-
 /* Gradient Text */
 .gradient-text {
   background: linear-gradient(135deg, #1e3a8a, #3b82f6);
@@ -256,13 +236,48 @@
   box-shadow: 0 0 30px rgba(30, 58, 138, 0.5);
 }
 
+/* Fixed Gradient Animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
 /* Enhanced shadow */
 .shadow-3xl {
   box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
 }
 
 /* Animated Border Light Effect */
-@keyframes border-spin {
+@keyframes border-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5), 0 0 10px rgba(59, 130, 246, 0.3), 0 0 15px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.5), 0 0 20px rgba(147, 51, 234, 0.3), 0 0 30px rgba(147, 51, 234, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5), 0 0 10px rgba(59, 130, 246, 0.3), 0 0 15px rgba(59, 130, 246, 0.2);
+  }
+}
+
+.animate-border-glow {
+  animation: border-glow 2s ease-in-out infinite;
+}
+
+/* Rotating border effect */
+@keyframes rotate-border {
   0% {
     transform: rotate(0deg);
   }
@@ -271,22 +286,6 @@
   }
 }
 
-.animate-border-spin {
-  animation: border-spin 3s linear infinite;
-}
-
-/* Pulsing glow effect */
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+.animate-rotate-border {
+  animation: rotate-border 4s linear infinite;
 }
