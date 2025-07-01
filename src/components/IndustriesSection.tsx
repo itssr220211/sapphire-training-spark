@@ -42,7 +42,7 @@ const IndustriesSection = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-sapphire/10 rounded-full mb-6 group-hover:bg-sapphire group-hover:text-white transition-all">
                 <industry.icon className="w-8 h-8 text-sapphire group-hover:text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-sapphire transition-colors">
+              <h3 className="text-xl mb-3 group-hover:text-sapphire transition-colors text-slate-300 font-semibold">
                 {industry.name}
               </h3>
               <p className="text-gray-600 leading-relaxed">
