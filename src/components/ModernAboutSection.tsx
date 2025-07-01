@@ -40,7 +40,7 @@ const ModernAboutSection = () => {
               <div className="w-12 h-px bg-sapphire"></div>
             </div>
             <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Transforming <span className="text-transparent bg-clip-text bg-gradient-to-r from-sapphire to-blue-600">Excellence</span> Through Learning
+              Empowering <span className="text-transparent bg-clip-text bg-gradient-to-r from-sapphire to-blue-600">Intelligence</span> at Work
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               We are a premier training consultancy specializing in corporate excellence. 
