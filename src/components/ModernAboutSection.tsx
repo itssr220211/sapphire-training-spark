@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Users, Award, Target, Zap, TrendingUp, Globe } from 'lucide-react';
 import ScrollRevealSection from './ScrollRevealSection';
@@ -90,37 +89,46 @@ const ModernAboutSection = () => {
           </div>
         </ScrollRevealSection>
 
-        {/* Mission Statement */}
+        {/* Enhanced Mission Statement with Animated Border */}
         <ScrollRevealSection delay={600}>
-          <div className="relative bg-gradient-to-r from-sapphire to-blue-600 rounded-3xl p-12 text-center text-white overflow-hidden">
-            <div className="absolute inset-0 bg-black/20"></div>
-            <div className="relative z-10 max-w-4xl mx-auto">
-              <h3 className="text-3xl lg:text-4xl font-bold mb-6">
-                Our Mission
-              </h3>
-              <p className="text-xl leading-relaxed mb-8 text-blue-100">
-                To bridge the skills gap in modern organizations by delivering world-class training 
-                experiences that combine theoretical excellence with practical application.
-              </p>
-              <div className="grid md:grid-cols-3 gap-8 text-left">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-                  <h4 className="font-semibold text-white mb-2">Expert-Led</h4>
-                  <p className="text-blue-100">Industry professionals with proven track records</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-                  <h4 className="font-semibold text-white mb-2">Customized</h4>
-                  <p className="text-blue-100">Tailored programs for your specific business needs</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-                  <h4 className="font-semibold text-white mb-2">Results-Driven</h4>
-                  <p className="text-blue-100">Measurable outcomes and continuous improvement</p>
+          <div className="relative group">
+            {/* Animated border effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 via-purple-500 via-pink-500 to-blue-400 rounded-3xl opacity-75 group-hover:opacity-100 blur-sm transition-opacity duration-500 animate-gradient-x bg-[length:400%_400%]"></div>
+            
+            {/* Main card */}
+            <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 rounded-3xl p-12 text-center text-white overflow-hidden">
+              {/* Subtle overlay for better text readability */}
+              <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-black/20"></div>
+              
+              <div className="relative z-10 max-w-4xl mx-auto">
+                <h3 className="text-3xl lg:text-4xl font-bold mb-6 text-white">
+                  Our Mission
+                </h3>
+                <p className="text-xl leading-relaxed mb-8 text-blue-100">
+                  To bridge the skills gap in modern organizations by delivering world-class training 
+                  experiences that combine theoretical excellence with practical application.
+                </p>
+                <div className="grid md:grid-cols-3 gap-8 text-left">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-colors duration-300">
+                    <h4 className="font-semibold text-white mb-2 text-lg">Expert-Led</h4>
+                    <p className="text-blue-100">Industry professionals with proven track records</p>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-colors duration-300">
+                    <h4 className="font-semibold text-white mb-2 text-lg">Customized</h4>
+                    <p className="text-blue-100">Tailored programs for your specific business needs</p>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-colors duration-300">
+                    <h4 className="font-semibold text-white mb-2 text-lg">Results-Driven</h4>
+                    <p className="text-blue-100">Measurable outcomes and continuous improvement</p>
+                  </div>
                 </div>
               </div>
+              
+              {/* Enhanced background pattern */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-400/10 to-purple-500/10 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-indigo-400/10 to-pink-500/10 rounded-full blur-3xl"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-cyan-400/5 to-blue-500/5 rounded-full blur-2xl"></div>
             </div>
-            
-            {/* Background Pattern */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-300/10 rounded-full blur-3xl"></div>
           </div>
         </ScrollRevealSection>
       </div>
