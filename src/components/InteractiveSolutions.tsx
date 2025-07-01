@@ -127,65 +127,7 @@ const InteractiveSolutions = () => {
         </ScrollRevealSection>
       </div>
 
-      <div className="relative h-screen flex items-center">
-        <div ref={scrollContainerRef} className="flex gap-8 px-6 will-change-transform" style={{
-        width: 'max-content'
-      }}>
-          {solutions.map((solution, index) => <div key={index} className="program-card flex-shrink-0 w-[500px] h-[600px] group">
-              <Card className="h-full border-0 shadow-2xl bg-white/90 backdrop-blur-sm hover:shadow-3xl transition-all duration-500 hover:-translate-y-4 overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent pointer-events-none"></div>
-                <div className={`h-2 bg-gradient-to-r ${solution.gradient} group-hover:h-3 transition-all duration-300`}></div>
-                
-                <div className="relative h-48 overflow-hidden">
-                  <img src={solution.image} alt={solution.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className={`absolute top-4 left-4 p-3 rounded-2xl bg-gradient-to-r ${solution.gradient} text-white shadow-lg`}>
-                    <solution.icon className="w-6 h-6" />
-                  </div>
-                </div>
-                
-                <CardHeader className="pb-4">
-                  <CardTitle className="text-2xl text-gray-900 group-hover:text-sapphire transition-colors duration-300 mb-2">
-                    {solution.title}
-                  </CardTitle>
-                  <p className={`text-sm font-semibold bg-gradient-to-r ${solution.gradient} bg-clip-text text-transparent`}>
-                    {solution.subtitle}
-                  </p>
-                  <CardDescription className="text-gray-600 text-base leading-relaxed">
-                    {solution.description}
-                  </CardDescription>
-                </CardHeader>
-                
-                <CardContent className="space-y-6">
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-3">Key Features:</h4>
-                    <div className="grid grid-cols-2 gap-2">
-                      {solution.features.map((feature, idx) => <div key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className={`w-4 h-4 text-green-500`} />
-                          <span className="text-sm text-gray-700">{feature}</span>
-                        </div>)}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-3">Benefits:</h4>
-                    <ul className="space-y-1">
-                      {solution.benefits.map((benefit, idx) => <li key={idx} className="flex items-center space-x-2">
-                          <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${solution.gradient}`}></div>
-                          <span className="text-sm text-gray-600">{benefit}</span>
-                        </li>)}
-                    </ul>
-                  </div>
-                  
-                  <Button className={`w-full bg-gradient-to-r ${solution.gradient} text-white hover:scale-105 transition-all duration-300 rounded-full shadow-lg`}>
-                    Learn More
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>)}
-        </div>
-      </div>
+      
 
       <ScrollRevealSection delay={400}>
         <div className="text-center mt-20 px-6">
