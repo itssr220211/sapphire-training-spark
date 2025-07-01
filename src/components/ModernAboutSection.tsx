@@ -1,38 +1,35 @@
 import React from 'react';
 import { Users, Award, Target, Zap, TrendingUp, Globe } from 'lucide-react';
 import ScrollRevealSection from './ScrollRevealSection';
+
 const ModernAboutSection = () => {
-  const stats = [{
-    number: '1,200+',
-    label: 'Professionals Trained',
-    icon: Users
-  }, {
-    number: '50+',
-    label: 'Enterprise Clients',
-    icon: Award
-  }, {
-    number: '95%',
-    label: 'Success Rate',
-    icon: Target
-  }, {
-    number: '24/7',
-    label: 'Support Available',
-    icon: Zap
-  }];
-  const features = [{
-    icon: TrendingUp,
-    title: 'Measurable Results',
-    description: 'Track progress with detailed analytics and performance metrics that demonstrate ROI.'
-  }, {
-    icon: Globe,
-    title: 'Global Reach',
-    description: 'Serving clients worldwide with localized content and culturally relevant training approaches.'
-  }, {
-    icon: Users,
-    title: 'Expert Instructors',
-    description: 'Learn from industry veterans with decades of experience in corporate training and development.'
-  }];
-  return <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+  const stats = [
+    { number: '1,200+', label: 'Professionals Trained', icon: Users },
+    { number: '50+', label: 'Enterprise Clients', icon: Award },
+    { number: '95%', label: 'Success Rate', icon: Target },
+    { number: '24/7', label: 'Support Available', icon: Zap },
+  ];
+
+  const features = [
+    {
+      icon: TrendingUp,
+      title: 'Measurable Results',
+      description: 'Track progress with detailed analytics and performance metrics that demonstrate ROI.'
+    },
+    {
+      icon: Globe,
+      title: 'Global Reach',
+      description: 'Serving clients worldwide with localized content and culturally relevant training approaches.'
+    },
+    {
+      icon: Users,
+      title: 'Expert Instructors',
+      description: 'Learn from industry veterans with decades of experience in corporate training and development.'
+    }
+  ];
+
+  return (
+    <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <ScrollRevealSection>
           <div className="text-center mb-16">
@@ -54,7 +51,8 @@ const ModernAboutSection = () => {
         {/* Stats Grid */}
         <ScrollRevealSection delay={200}>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-            {stats.map((stat, index) => <div key={index} className="text-center group">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center group">
                 <div className="relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-sapphire to-blue-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
                   <stat.icon className="w-10 h-10 text-white" />
                   <div className="absolute -inset-2 bg-gradient-to-br from-sapphire/20 to-blue-600/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -65,14 +63,16 @@ const ModernAboutSection = () => {
                 <div className="text-gray-600 font-medium">
                   {stat.label}
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
         </ScrollRevealSection>
 
         {/* Features Grid */}
         <ScrollRevealSection delay={400}>
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            {features.map((feature, index) => <div key={index} className="group">
+            {features.map((feature, index) => (
+              <div key={index} className="group">
                 <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-sapphire/10 to-blue-600/10 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
                     <feature.icon className="w-8 h-8 text-sapphire" />
@@ -84,7 +84,8 @@ const ModernAboutSection = () => {
                     {feature.description}
                   </p>
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
         </ScrollRevealSection>
 
@@ -94,7 +95,7 @@ const ModernAboutSection = () => {
             {/* Animated rotating border */}
             <div className="absolute -inset-1 rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity duration-500">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient-x"></div>
-              <div className="absolute inset-0 rounded-5xl bg-gradient-to-r from-pink-500 via-blue-400 to-purple-500 animate-gradient-x opacity-90 rounded-5"></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-pink-500 via-blue-400 to-purple-500 animate-gradient-x opacity-50"></div>
             </div>
             
             {/* Main card */}
@@ -130,6 +131,8 @@ const ModernAboutSection = () => {
           </div>
         </ScrollRevealSection>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default ModernAboutSection;
