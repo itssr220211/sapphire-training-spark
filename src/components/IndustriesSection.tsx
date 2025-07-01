@@ -38,7 +38,7 @@ const IndustriesSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {industries.map((industry, index) => <div key={index} className="group text-center p-8 rounded-2xl hover:bg-gray-50 transition-all hover-lift">
+          {industries.map((industry, index) => <div key={index} className="group text-center p-8 rounded-2xl transition-all hover-lift bg-slate-950">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-sapphire/10 rounded-full mb-6 group-hover:bg-sapphire group-hover:text-white transition-all">
                 <industry.icon className="w-8 h-8 text-sapphire group-hover:text-white" />
               </div>
