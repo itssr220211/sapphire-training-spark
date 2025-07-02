@@ -63,9 +63,15 @@ const AnimatedHero = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div className={`space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3 text-blue-300">
-                <div className="w-12 h-px bg-blue-300"></div>
+            <div className="space-y-6">
+              {/* Updated Logo Section with proper spacing */}
+              <div className="flex items-center space-x-4 text-blue-300 mb-8">
+                <img 
+                  src="/lovable-uploads/2 copy.png" 
+                  alt="Sapphire Training Solutions Logo" 
+                  className="h-16 w-auto transition-all duration-300 hover:drop-shadow-[0_0_16px_rgba(59,130,246,0.8)] hover:scale-105"
+                />
+                <div className="w-16 h-px bg-blue-300"></div>
                 <span className="text-sm font-medium tracking-wider uppercase">Sapphire Training Solutions</span>
               </div>
               
