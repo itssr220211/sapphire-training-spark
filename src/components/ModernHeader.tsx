@@ -79,11 +79,11 @@ const ModernHeader = () => {
               <button 
                 key={item} 
                 onClick={() => scrollToSection(item.toLowerCase())} 
-                className={`text-sm font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full ${
-                  isScrolled 
-                    ? 'text-white/90 hover:text-white hover:bg-white/20' 
-                    : 'text-gray-700 hover:text-sapphire hover:bg-sapphire/10'
-                }`}
+            className={`text-sm font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full ${
+              isScrolled 
+                ? 'text-gray-800 hover:text-gray-900 hover:bg-white/30' 
+                : 'text-gray-700 hover:text-sapphire hover:bg-sapphire/10'
+            }`}
               >
                 {item}
               </button>
@@ -94,7 +94,7 @@ const ModernHeader = () => {
               onClick={() => scrollToSection('contact')} 
               className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 ${
                 isScrolled 
-                  ? 'bg-white/20 hover:bg-white/30 text-white border border-white/30' 
+                  ? 'bg-gray-800 hover:bg-gray-900 text-white border border-gray-600' 
                   : 'bg-sapphire hover:bg-sapphire/90 text-white'
               }`}
             >
@@ -107,7 +107,7 @@ const ModernHeader = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`lg:hidden p-2 rounded-full transition-all duration-300 ${
               isScrolled 
-                ? 'text-white hover:bg-white/20' 
+                ? 'text-gray-800 hover:bg-white/30' 
                 : 'text-gray-700 hover:bg-gray-100'
             }`}
           >

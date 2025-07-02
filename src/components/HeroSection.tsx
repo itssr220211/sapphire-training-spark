@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
 
@@ -11,6 +11,22 @@ const HeroSection = () => {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const centralLogo = document.getElementById('hero-central-logo');
+      if (centralLogo) {
+        const scrollY = window.scrollY;
+        const opacity = Math.max(0, 1 - scrollY / 300);
+        const scale = Math.max(0.5, 1 - scrollY / 600);
+        centralLogo.style.opacity = opacity.toString();
+        centralLogo.style.transform = `scale(${scale})`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section id="home" className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white pt-20">
       {/* Top Logo */}
@@ -19,6 +35,16 @@ const HeroSection = () => {
           src="/lovable-uploads/87257fef-495b-4594-bb30-29b61a598c38.png" 
           alt="Sapphire Training Solutions" 
           className="h-24 w-auto"
+        />
+      </div>
+
+      {/* Central Hero Logo */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+        <img 
+          src="/lovable-uploads/87257fef-495b-4594-bb30-29b61a598c38.png" 
+          alt="Sapphire Training Solutions" 
+          className="h-32 w-auto opacity-30 animate-pulse"
+          id="hero-central-logo"
         />
       </div>
       
