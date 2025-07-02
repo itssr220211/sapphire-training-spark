@@ -7,8 +7,8 @@ const AnimatedHero = () => {
   const [currentText, setCurrentText] = useState(0);
   const animatedTexts = ["Empowering Intelligence", "Transforming Teams", "Driving Excellence"];
   const carouselImages = [{
-    src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop",
-    alt: "Professionals collaborating in modern office"
+    src: "/lovable-uploads/2.png",
+    alt: "Sapphire Training Solutions - Professional team collaboration"
   }, {
     src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
     alt: "Person using laptop for professional development"

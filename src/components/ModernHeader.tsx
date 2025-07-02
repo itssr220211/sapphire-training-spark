@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -65,12 +64,12 @@ const ModernHeader = () => {
           : 'bg-white rounded-full shadow-lg border border-gray-200'
       }`}>
         <div className="flex items-center px-6 py-3">
-          {/* Logo Only */}
+          {/* Logo with Hover Effect */}
           <div className="flex items-center mr-8">
             <img 
               alt="Sapphire Training Solutions" 
               src="/lovable-uploads/dc785b32-7742-48f3-a331-ceb7e7f5a270.png" 
-              className="h-10 w-10" 
+              className="h-10 w-10 transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(59,130,246,0.8)] hover:scale-110" 
             />
           </div>
 
