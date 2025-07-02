@@ -60,29 +60,17 @@ const ModernHeader = () => {
       {/* Bottom Navigation */}
       <nav className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'glassmorphic rounded-full shadow-2xl border-white/30' 
+          ? 'glassmorphic rounded-full shadow-2xl animate-glow-border' 
           : 'bg-white rounded-full shadow-lg border border-gray-200'
       }`}>
         <div className="flex items-center px-6 py-3">
           {/* Logo */}
-          <div className="flex items-center space-x-3 mr-8">
+          <div className="flex items-center mr-8">
             <img 
               alt="Sapphire Training Solutions" 
               src="/lovable-uploads/dc785b32-7742-48f3-a331-ceb7e7f5a270.png" 
               className="h-10 w-10" 
             />
-            <div className="hidden sm:block">
-              <span className={`text-sm font-bold transition-colors ${
-                isScrolled ? 'text-white' : 'text-sapphire'
-              }`}>
-                SAPPHIRE
-              </span>
-              <div className={`text-xs tracking-wider transition-colors ${
-                isScrolled ? 'text-white/80' : 'text-gray-600'
-              }`}>
-                TRAINING SOLUTIONS
-              </div>
-            </div>
           </div>
 
           {/* Desktop Navigation */}
