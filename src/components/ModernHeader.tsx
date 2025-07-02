@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -41,7 +42,7 @@ const ModernHeader = () => {
                 <button 
                   key={item} 
                   onClick={() => scrollToSection(item.toLowerCase())} 
-                  className="text-left text-gray-700 hover:text-sapphire transition-colors py-2 font-medium"
+                  className="text-left text-gray-700 hover:text-sapphire transition-colors py-2 font-medium hover:glow-text"
                 >
                   {item}
                 </button>
@@ -64,7 +65,7 @@ const ModernHeader = () => {
           : 'bg-white rounded-full shadow-lg border border-gray-200'
       }`}>
         <div className="flex items-center px-6 py-3">
-          {/* Logo */}
+          {/* Logo Only - No Brand Name */}
           <div className="flex items-center mr-8">
             <img 
               alt="Sapphire Training Solutions" 
@@ -79,11 +80,11 @@ const ModernHeader = () => {
               <button 
                 key={item} 
                 onClick={() => scrollToSection(item.toLowerCase())} 
-            className={`text-sm font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full ${
-              isScrolled 
-                ? 'text-gray-800 hover:text-gray-900 hover:bg-white/30' 
-                : 'text-gray-700 hover:text-sapphire hover:bg-sapphire/10'
-            }`}
+                className={`text-sm font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full hover:glow-text ${
+                  isScrolled 
+                    ? 'text-gray-800 hover:text-gray-900 hover:bg-white/30' 
+                    : 'text-gray-700 hover:text-sapphire hover:bg-sapphire/10'
+                }`}
               >
                 {item}
               </button>
@@ -92,7 +93,7 @@ const ModernHeader = () => {
             {/* Contact Button */}
             <Button 
               onClick={() => scrollToSection('contact')} 
-              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 ${
+              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:glow-button ${
                 isScrolled 
                   ? 'bg-gray-800 hover:bg-gray-900 text-white border border-gray-600' 
                   : 'bg-sapphire hover:bg-sapphire/90 text-white'

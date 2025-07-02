@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -236,6 +237,21 @@
 
 .glow-blue:hover {
   box-shadow: 0 0 30px rgba(30, 58, 138, 0.5);
+}
+
+/* Text Glow Effects */
+.glow-text {
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.6), 0 0 16px rgba(59, 130, 246, 0.4);
+  transition: text-shadow 0.3s ease;
+}
+
+.hover\:glow-text:hover {
+  text-shadow: 0 0 12px rgba(59, 130, 246, 0.8), 0 0 24px rgba(59, 130, 246, 0.6), 0 0 36px rgba(59, 130, 246, 0.4);
+}
+
+/* Button Glow Effects */
+.hover\:glow-button:hover {
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.6), 0 0 32px rgba(59, 130, 246, 0.4);
 }
 
 /* Fixed Gradient Animation */

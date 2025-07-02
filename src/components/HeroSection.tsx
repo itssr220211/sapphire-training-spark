@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
@@ -14,12 +13,25 @@ const HeroSection = () => {
   useEffect(() => {
     const handleScroll = () => {
       const centralLogo = document.getElementById('hero-central-logo');
+      const topLogo = document.getElementById('hero-top-logo');
+      
       if (centralLogo) {
         const scrollY = window.scrollY;
         const opacity = Math.max(0, 1 - scrollY / 300);
         const scale = Math.max(0.5, 1 - scrollY / 600);
         centralLogo.style.opacity = opacity.toString();
         centralLogo.style.transform = `scale(${scale})`;
+      }
+
+      if (topLogo) {
+        const scrollY = window.scrollY;
+        if (scrollY > 100) {
+          topLogo.classList.add('fixed', 'top-4', 'left-1/2', 'transform', '-translate-x-1/2', 'z-50', 'animate-fadeInUp');
+          topLogo.style.transform = 'translateX(-50%) scale(0.8)';
+        } else {
+          topLogo.classList.remove('fixed', 'top-4', 'left-1/2', 'transform', '-translate-x-1/2', 'z-50', 'animate-fadeInUp');
+          topLogo.style.transform = 'scale(1)';
+        }
       }
     };
 
@@ -29,12 +41,12 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white pt-20">
-      {/* Top Logo */}
-      <div className="flex justify-center pt-8 pb-4">
+      {/* Top Logo - Now Sticky */}
+      <div className="flex justify-center pt-8 pb-4 transition-all duration-500" id="hero-top-logo">
         <img 
           src="/lovable-uploads/87257fef-495b-4594-bb30-29b61a598c38.png" 
           alt="Sapphire Training Solutions" 
-          className="h-24 w-auto"
+          className="h-24 w-auto drop-shadow-lg"
         />
       </div>
 
