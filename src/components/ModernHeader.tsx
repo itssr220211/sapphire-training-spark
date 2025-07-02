@@ -58,14 +58,14 @@ const ModernHeader = () => {
         </div>
       )}
 
-      {/* Bottom Navigation */}
+      {/* Bottom Navigation - Always Visible */}
       <nav className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'glassmorphic rounded-full shadow-2xl animate-glow-border' 
+          ? 'bg-white/20 backdrop-blur-xl rounded-full shadow-2xl border border-white/30 animate-glow-border' 
           : 'bg-white rounded-full shadow-lg border border-gray-200'
       }`}>
         <div className="flex items-center px-6 py-3">
-          {/* Logo Only - No Brand Name */}
+          {/* Logo Only */}
           <div className="flex items-center mr-8">
             <img 
               alt="Sapphire Training Solutions" 
@@ -80,9 +80,9 @@ const ModernHeader = () => {
               <button 
                 key={item} 
                 onClick={() => scrollToSection(item.toLowerCase())} 
-                className={`text-sm font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full hover:glow-text ${
+                className={`text-sm font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full ${
                   isScrolled 
-                    ? 'text-gray-800 hover:text-gray-900 hover:bg-white/30' 
+                    ? 'text-gray-800 hover:text-gray-900 hover:bg-white/30 hover:glow-text' 
                     : 'text-gray-700 hover:text-sapphire hover:bg-sapphire/10'
                 }`}
               >

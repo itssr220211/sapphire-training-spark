@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
@@ -12,26 +13,28 @@ const HeroSection = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      const heroLogo = document.getElementById('hero-top-logo');
       const centralLogo = document.getElementById('hero-central-logo');
-      const topLogo = document.getElementById('hero-top-logo');
       
+      if (heroLogo) {
+        const scrollY = window.scrollY;
+        if (scrollY > 100) {
+          heroLogo.classList.add('fixed', 'top-4', 'left-1/2', 'transform', '-translate-x-1/2', 'z-50');
+          heroLogo.style.transform = 'translateX(-50%) scale(0.6)';
+          heroLogo.style.opacity = '0.9';
+        } else {
+          heroLogo.classList.remove('fixed', 'top-4', 'left-1/2', 'transform', '-translate-x-1/2', 'z-50');
+          heroLogo.style.transform = 'scale(1)';
+          heroLogo.style.opacity = '1';
+        }
+      }
+
       if (centralLogo) {
         const scrollY = window.scrollY;
         const opacity = Math.max(0, 1 - scrollY / 300);
         const scale = Math.max(0.5, 1 - scrollY / 600);
         centralLogo.style.opacity = opacity.toString();
-        centralLogo.style.transform = `scale(${scale})`;
-      }
-
-      if (topLogo) {
-        const scrollY = window.scrollY;
-        if (scrollY > 100) {
-          topLogo.classList.add('fixed', 'top-4', 'left-1/2', 'transform', '-translate-x-1/2', 'z-50', 'animate-fadeInUp');
-          topLogo.style.transform = 'translateX(-50%) scale(0.8)';
-        } else {
-          topLogo.classList.remove('fixed', 'top-4', 'left-1/2', 'transform', '-translate-x-1/2', 'z-50', 'animate-fadeInUp');
-          topLogo.style.transform = 'scale(1)';
-        }
+        centralLogo.style.transform = `translate(-50%, -50%) scale(${scale})`;
       }
     };
 
@@ -40,8 +43,8 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white pt-20">
-      {/* Top Logo - Now Sticky */}
+    <section id="home" className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white">
+      {/* Top Logo - Becomes Sticky */}
       <div className="flex justify-center pt-8 pb-4 transition-all duration-500" id="hero-top-logo">
         <img 
           src="/lovable-uploads/87257fef-495b-4594-bb30-29b61a598c38.png" 
@@ -67,7 +70,7 @@ const HeroSection = () => {
             {/* Logo for Mobile */}
             <div className="lg:hidden flex flex-col items-center text-center mb-8">
               <img 
-                src="/lovable-uploads/cb6c7757-2ba6-4d75-9379-00ed412e6065.png" 
+                src="/lovable-uploads/87257fef-495b-4594-bb30-29b61a598c38.png" 
                 alt="Sapphire Training Solutions" 
                 className="h-20 w-auto mb-4"
               />
