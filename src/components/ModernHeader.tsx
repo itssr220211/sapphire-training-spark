@@ -25,7 +25,7 @@ const ModernHeader = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img alt="Sapphire Training Solutions" src="/lovable-uploads/dc785b32-7742-48f3-a331-ceb7e7f5a270.png" className="h-13 w-13" />
+            <img alt="Sapphire Training Solutions" src="/lovable-uploads/dc785b32-7742-48f3-a331-ceb7e7f5a270.png" className="h-20 w-20" />
             <div className="hidden sm:block">
               <span className={`text-xl font-bold transition-colors ${isScrolled ? 'text-sapphire' : 'text-white'}`}>
                 SAPPHIRE
