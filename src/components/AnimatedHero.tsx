@@ -1,21 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+
 const AnimatedHero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentText, setCurrentText] = useState(0);
+  
   const animatedTexts = ["Empowering Intelligence", "Transforming Teams", "Driving Excellence"];
-  const carouselImages = [{
-    src: "/lovable-uploads/2.png",
-    alt: "Sapphire Training Solutions - Professional team collaboration"
-  }, {
-    src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
-    alt: "Person using laptop for professional development"
-  }, {
-    src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
-    alt: "Professional woman in training session"
-  }];
+  
+  // Dynamic corporate images that sync with text
+  const corporateImages = [
+    {
+      src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop",
+      alt: "Modern corporate building representing intelligence and innovation"
+    },
+    {
+      src: "/lovable-uploads/3.png",
+      alt: "Professional team collaboration in modern workspace"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop",
+      alt: "Excellence in corporate environment and business culture"
+    }
+  ];
+
   useEffect(() => {
     setIsVisible(true);
     const interval = setInterval(() => {
@@ -23,6 +31,7 @@ const AnimatedHero = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -31,7 +40,9 @@ const AnimatedHero = () => {
       });
     }
   };
-  return <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-sapphire to-blue-900">
+
+  return (
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-sapphire to-blue-900">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -42,9 +53,9 @@ const AnimatedHero = () => {
       {/* Geometric Grid */}
       <div className="absolute inset-0 opacity-10">
         <div className="grid grid-cols-12 gap-4 h-full">
-          {Array.from({
-          length: 144
-        }).map((_, i) => <div key={i} className="border border-white/20 rounded-sm"></div>)}
+          {Array.from({ length: 144 }).map((_, i) => (
+            <div key={i} className="border border-white/20 rounded-sm"></div>
+          ))}
         </div>
       </div>
 
@@ -75,12 +86,21 @@ const AnimatedHero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
-              <Button onClick={() => scrollToSection('solutions')} size="lg" className="bg-white text-sapphire hover:bg-blue-50 px-8 py-4 text-lg font-semibold rounded-full transition-all hover:shadow-2xl hover:scale-105 group">
+              <Button 
+                onClick={() => scrollToSection('solutions')} 
+                size="lg" 
+                className="bg-white text-sapphire hover:bg-blue-50 px-8 py-4 text-lg font-semibold rounded-full transition-all hover:shadow-2xl hover:scale-105 group"
+              >
                 Explore Solutions
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               
-              <Button onClick={() => scrollToSection('testimonials')} variant="outline" size="lg" className="border-2 border-white hover:bg-white hover:text-sapphire px-8 py-4 text-lg font-semibold rounded-full transition-all group text-blue-800">
+              <Button 
+                onClick={() => scrollToSection('testimonials')} 
+                variant="outline" 
+                size="lg" 
+                className="border-2 border-white hover:bg-white hover:text-sapphire px-8 py-4 text-lg font-semibold rounded-full transition-all group text-blue-800"
+              >
                 <Play className="mr-2 w-5 h-5" />
                 Watch Demo
               </Button>
@@ -103,18 +123,25 @@ const AnimatedHero = () => {
             </div>
           </div>
 
-          {/* Glassmorphic Carousel */}
+          {/* Dynamic Corporate Images with Fade Effect */}
           <div className={`relative transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
             <div className="relative p-8 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl">
-              <Carousel className="w-full max-w-md mx-auto">
-                <CarouselContent>
-                  {carouselImages.map((image, index) => <CarouselItem key={index}>
-                      <div className="p-1">
-                        <img src={image.src} alt={image.alt} className="w-full h-64 object-cover rounded-2xl shadow-lg" />
-                      </div>
-                    </CarouselItem>)}
-                </CarouselContent>
-              </Carousel>
+              <div className="relative w-full max-w-md mx-auto h-64 overflow-hidden rounded-2xl">
+                {corporateImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                      index === currentText ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    <img 
+                      src={image.src} 
+                      alt={image.alt} 
+                      className="w-full h-full object-cover rounded-2xl shadow-lg"
+                    />
+                  </div>
+                ))}
+              </div>
               
               {/* Floating Elements */}
               <div className="absolute -top-8 -left-8 w-16 h-16 bg-white/10 rounded-full blur-sm animate-pulse"></div>
@@ -131,6 +158,8 @@ const AnimatedHero = () => {
           <div className="w-1 h-3 bg-white/60 rounded-full animate-pulse"></div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default AnimatedHero;
