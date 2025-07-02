@@ -15,7 +15,7 @@ const AnimatedHero = () => {
       alt: "Modern corporate building representing intelligence and innovation"
     },
     {
-      src: "/lovable-uploads/3.png",
+      src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop",
       alt: "Professional team collaboration in modern workspace"
     },
     {
@@ -138,6 +138,7 @@ const AnimatedHero = () => {
                       src={image.src} 
                       alt={image.alt} 
                       className="w-full h-full object-cover rounded-2xl shadow-lg"
+                      loading="lazy"
                     />
                   </div>
                 ))}

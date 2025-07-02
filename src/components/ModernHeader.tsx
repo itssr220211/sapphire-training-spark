@@ -68,7 +68,7 @@ const ModernHeader = () => {
           <div className="flex items-center">
             <img 
               alt="Sapphire Training Solutions" 
-              src="/lovable-uploads/3.png" 
+              src="/lovable-uploads/dc785b32-7742-48f3-a331-ceb7e7f5a270.png" 
               className="h-12 w-12 transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(59,130,246,0.8)] hover:scale-110" 
             />
           </div>
