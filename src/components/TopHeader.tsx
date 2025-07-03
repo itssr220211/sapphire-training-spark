@@ -29,7 +29,7 @@ const TopHeader = () => {
         <img 
           src="/lovable-uploads/92e11cf9-7dbb-41a2-b4f2-38b20aef02c8.png" 
           alt="Sapphire Training Solutions" 
-          className="h-16 w-auto drop-shadow-lg transition-all duration-300 hover:scale-105"
+          className="h-20 w-auto drop-shadow-lg transition-all duration-300 hover:scale-105"
         />
       </div>
     </header>
