@@ -7,10 +7,9 @@ const TopHeader = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const heroHeight = window.innerHeight;
       
-      // Hide header when scrolling past 80% of hero section
-      setIsVisible(scrollY < heroHeight * 0.8);
+      // Hide header when scrolling down (fade starts immediately)
+      setIsVisible(scrollY < 100);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -29,7 +28,7 @@ const TopHeader = () => {
         <img 
           src="/lovable-uploads/92e11cf9-7dbb-41a2-b4f2-38b20aef02c8.png" 
           alt="Sapphire Training Solutions" 
-          className="h-20 w-auto drop-shadow-lg transition-all duration-300 hover:scale-105"
+          className="h-28 w-auto drop-shadow-lg transition-all duration-300 hover:scale-105"
         />
       </div>
     </header>
